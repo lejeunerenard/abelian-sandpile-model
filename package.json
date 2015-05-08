@@ -1,0 +1,17 @@
+{
+  "name": "sablo-clone",
+  "version": "0.0.0",
+  "description": "A clone of an app called Sablo which models Abelian Sandpile",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify src/js/app.js -o dist/js/app.js",
+    "build:watch": "watchify src/js/app.js -o dist/js/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lejeunerenard",
+  "license": "GPLv2",
+  "devDependencies": {
+    "browserify": "^10.1.3",
+    "watchify": "^3.2.1"
+  }
+}

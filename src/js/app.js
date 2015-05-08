@@ -21,7 +21,7 @@ function Game ( options ) {
          '#ff3e2d',
          '#2f2d30'
       ]
-   }; 
+   };
 
    self.cells = [];
    self.populate();
@@ -34,7 +34,6 @@ function Game ( options ) {
 
    var tick = function() {
       self.update();
-      self.update();
 
       self.draw();
 
@@ -46,6 +45,7 @@ function Game ( options ) {
 
 Game.prototype = {
    populate: function () {
+      this.cells = [];
       for ( var i = 0; i < Math.floor( this.width / this.cell.width ); i ++  ) {
          this.cells[i] = [];
          for ( var j = 0; j < Math.floor( this.height / this.cell.height ); j ++  ) {

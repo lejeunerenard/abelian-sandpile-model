@@ -32,7 +32,7 @@ function Game ( options ) {
 
    self.loadEvents();
 
-   var tick = function() {
+   var tick = function tick() {
       self.update();
 
       self.draw();
@@ -44,7 +44,7 @@ function Game ( options ) {
 }
 
 Game.prototype = {
-   populate: function () {
+   populate: function populate() {
       this.cells = [];
       for ( var i = 0; i < Math.floor( this.width / this.cell.width ); i ++  ) {
          this.cells[i] = [];
@@ -54,13 +54,13 @@ Game.prototype = {
       }
       console.log('cells', this.cells.length * this.cells[0].length);
    },
-   update: function () {
+   update: function update() {
       var i = this.fountains.length;
       while ( i -- ) {
          this.addToStack(this.fountains[i], 1);
       }
    },
-   draw: function () {
+   draw: function draw() {
       var i = this.cells.length;
       var j;
       while ( i -- ) {
@@ -70,9 +70,9 @@ Game.prototype = {
          }
       }
    },
-   loadEvents: function() {
+   loadEvents: function loadEvents() {
       var self = this;
-      self.canvas.addEventListener('click', function(e) {
+      self.canvas.addEventListener('click', function canvasClick(e) {
          var x = e.clientX - self.canvas.offsetLeft;
          var y = e.clientY - self.canvas.offsetTop;
 
@@ -84,7 +84,7 @@ Game.prototype = {
    },
 
    // Cell specific functions. The Game will be the puppet master.
-   addToStack: function(cell, amount) {
+   addToStack: function addToStack(cell, amount) {
       amount = amount || 1;
 
       cell.stack += amount;
@@ -109,7 +109,7 @@ Game.prototype = {
          }
       }
    },
-   getGridPosition: function(position) {
+   getGridPosition: function getGridPosition(position) {
       return {
          i: Math.floor( position.x / this.cell.width ),
          j: Math.floor( position.y / this.cell.height )
@@ -117,6 +117,6 @@ Game.prototype = {
    }
 };
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function winOnLoad() {
    new Game();
 });

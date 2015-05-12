@@ -46,13 +46,26 @@ function Game ( options ) {
 
    // Dimensions etc
    self.canvas = options.canvas || document.querySelector('canvas');
+
+   // Size to the window but limit it to 1000px in both dimensions
+   if ( window.innerWidth > 1000 ) {
+      self.canvas.width = 1000;
+   } else {
+      self.canvas.width = window.innerWidth;
+   }
+   if ( window.innerHeight > 1000 ) {
+      self.canvas.height = 1000;
+   } else {
+      self.canvas.height = window.innerHeight;
+   }
+
    self.width = self.canvas.width;
    self.height = self.canvas.height;
    self.screen = self.canvas.getContext('2d');
 
    self.cell = {
-      width: 2,
-      height: 2,
+      width: 4,
+      height: 4,
       colors: [
          '#ffffff',
          '#a3bbc7',

@@ -59,10 +59,11 @@ function Game ( options ) {
 Game.prototype = {
    populate: function populate() {
       this.cells = [];
+      var stackSize = Math.floor( Math.random() * 3 );
       for ( var i = 0; i < Math.floor( this.width / this.cell.width ); i ++  ) {
          this.cells[i] = [];
          for ( var j = 0; j < Math.floor( this.height / this.cell.height ); j ++  ) {
-            this.cells[i].push( new Cell(this, { x: i * this.cell.width, y: j * this.cell.height }, { width: this.cell.width, height: this.cell.height, stack: 0 }) );
+            this.cells[i].push( new Cell(this, { x: i * this.cell.width, y: j * this.cell.height }, { width: this.cell.width, height: this.cell.height, stack: stackSize }) );
          }
       }
       console.log('cells', this.cells.length * this.cells[0].length);

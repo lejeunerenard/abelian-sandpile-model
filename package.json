@@ -12,6 +12,10 @@
   "license": "GPLv2",
   "devDependencies": {
     "browserify": "^10.1.3",
+    "gulp": "^3.8.11",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-util": "^3.0.4",
+    "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.1"
   },
   "dependencies": {

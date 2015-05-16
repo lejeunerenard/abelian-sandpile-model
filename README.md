@@ -18,6 +18,5 @@ node index.js
 ## Develop
 
    ```
-npm run build:watch &
-node index.js
+gulp
    ```
